@@ -1350,11 +1350,11 @@ static int mtk_parse_info(const unsigned char* data, int dataLen)
       break;
     case 0x07:
       if (cmd == 0x0106) {
-        dbg(5, "# GPS Logger# Turned On\n"); // Fixme - start new trk
-        mtk_info.track_event |= MTK_EVT_START;
+        dbg(5, "# GPS Logger# Turned On\n");
       }
       if (cmd == 0x0104) {
         dbg(5, "# GPS Logger# Log disabled\n");
+        mtk_info.track_event |= MTK_EVT_START;
       }
       break;
     default:
